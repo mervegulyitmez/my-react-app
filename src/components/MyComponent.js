@@ -99,13 +99,30 @@ export default function TransitionsModal() {
                 <div style={{ marginTop: "10px" }}>
                   <Divider />
                 </div>
-                <ClientTypeSelector selectedType={clientType} onSelectType={handleClientTypeChange} />
+                <ClientTypeSelector
+                  selectedType={clientType}
+                  onSelectType={handleClientTypeChange}
+                />
                 <div>
-      <TestingCenter centerNumber={1} />
-      <TestingCenter centerNumber={2} />
-      <TestingCenter centerNumber={3} />
-      <TestingCenter centerNumber={4} />
-    </div>
+                  <TestingCenter centerNumber={1} />
+                  <TestingCenter centerNumber={2} />
+                  <TestingCenter centerNumber={3} />
+                  <TestingCenter centerNumber={4} />
+                </div>
+              </Grid>
+              <Grid item xs={12} align="center"> {/* Center align grid item */}
+                <Typography variant="h6">
+                  Data in the import file is correct. Please press Continue to
+                  import.
+                </Typography>
+                <div style={{ marginTop: "10px" }}>
+                  <Button variant="contained" color="primary">
+                    Continue Import
+                  </Button>
+                  <Button variant="outlined" color="primary" onClick={handleClose} style={{ marginLeft: "10px" }}>
+                    Cancel
+                  </Button>
+                </div>
               </Grid>
             </Grid>
           </Box>
