@@ -22,15 +22,17 @@ function TestingCenter({ centerNumber }) {
 
   return (
     <div className="testing-center-container">
-      <Typography variant="h6">Testing Center {centerNumber}</Typography>
       <Box display="flex" alignItems="center">
-        <div className="">
+      <Typography gutterBottom className="main-text-color">Testing Center {centerNumber}</Typography>
+      <Box display="flex" alignItems="center">
+        <div className="testing-center-client">
           <Select
             value={selectedClient}
             onChange={handleClientChange}
             displayEmpty
             className="select-element"
-          >
+            sx={{ borderRadius: "20px" , color:"#293d68"}}
+            >
             <MenuItem value="" disabled>
               Select Client
             </MenuItem>
@@ -41,6 +43,8 @@ function TestingCenter({ centerNumber }) {
           <AccessTimeIcon />
         </div>
       </Box>
+      </Box>
+      
     </div>
   );
 }

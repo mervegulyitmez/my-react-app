@@ -1,11 +1,13 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 function ElapsedDataChecker({ elapsedDates }) {
   return (
     <div className="elapsed-data-checker">
       <Box className="elapsed-dates-box">
-        <h3>Elapsed Dates:</h3>
+      <Typography gutterBottom fontWeight="bold" className="main-text-color">
+          Elapsed Data Checking
+        </Typography>
         {elapsedDates && elapsedDates.length > 0 ? (
           <ul>
             {elapsedDates.map((date, index) => (
@@ -13,7 +15,7 @@ function ElapsedDataChecker({ elapsedDates }) {
             ))}
           </ul>
         ) : (
-          <p>No Elapsed Dates!</p>
+          <p className="elapsed-date">No Elapsed Dates!</p>
         )}
       </Box>
     </div>

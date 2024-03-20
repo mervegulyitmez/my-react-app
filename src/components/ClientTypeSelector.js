@@ -1,5 +1,11 @@
 import React from "react";
-import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from "@mui/material";
+import {
+  FormControl,
+  Typography,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+} from "@mui/material";
 
 function ClientTypeSelector({ selectedType, onSelectType }) {
   const handleTypeChange = (event) => {
@@ -8,16 +14,28 @@ function ClientTypeSelector({ selectedType, onSelectType }) {
 
   return (
     <FormControl component="fieldset">
-      <FormLabel component="legend" className="form-label">Client:</FormLabel>
+      <Typography gutterBottom fontWeight="bold" className="main-text-color">
+        Client:
+      </Typography>
       <RadioGroup
         aria-label="client-type"
         name="client-type"
         value={selectedType}
         onChange={handleTypeChange}
-
+        className="custom-divider"
       >
-        <FormControlLabel value="Single" control={<Radio />} label="Single" />
-        <FormControlLabel value="Multiple" control={<Radio />} label="Multiple" />
+        <FormControlLabel
+          value="Single"
+          control={<Radio />}
+          label="Single"
+          className="main-text-color"
+        />
+        <FormControlLabel
+          className="main-text-color"
+          value="Multiple"
+          control={<Radio />}
+          label="Multiple"
+        />
       </RadioGroup>
     </FormControl>
   );

@@ -1,9 +1,8 @@
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { Button, Box } from "@mui/material";
+import { Button, Box, Typography } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
-import "./FileUploader.css"; // Import CSS file for styling
 
 function FileUploader({ onFileUpload }) {
   const [files, setFiles] = useState([]);
@@ -22,22 +21,21 @@ function FileUploader({ onFileUpload }) {
 
   return (
     <div className="file-uploader">
+      <Typography variant="body1" className="main-text-color" fontWeight="bold" sx={{paddingBottom:'5px'}}>
+            Select a manifest you'd like to Import
+          </Typography>
       <Box className="big-rectangle">
         <Box className="nested-dashed-rectangle" {...getRootProps()}>
           <input {...getInputProps()} multiple /> {/* Add multiple attribute here */}
           <InsertDriveFileIcon className="document-icon" />
-          {isDragActive ? (
-            <p>Drop the files here ...</p>
-          ) : (
-            <p>Drag & drop here or browse</p>
-          )}
+          <p className="main-text-color">Drag & Drop Here Or <strong>Browse</strong></p>
         </Box>
         <Button variant="contained" className="upload-button">
           Upload Manifest
         </Button>
       </Box>
       <div className="file-list">
-        <h4>Uploaded Files:</h4>
+        <h4 className="main-text-color">Uploaded Files:</h4>
         <ul>
           {files.map((file) => (
             <li key={file.name}>

@@ -17,6 +17,7 @@ import SplitScheduleSelector from "./SplitScheduleSelector";
 import LocationChecking from "./LocationChecking";
 import ClientTypeSelector from "./ClientTypeSelector";
 import TestingCenter from "./TestingCenter";
+import CustomDivider from "./CustomDivider";
 import "../../src/style.scss";
 
 export default function TransitionsModal() {
@@ -74,17 +75,11 @@ export default function TransitionsModal() {
                   value={importName}
                   onChange={handleImportNameChange}
                 />
-                <div style={{ marginTop: "10px" }}>
-                  <Divider />
-                </div>
+                <CustomDivider />
                 <FileUploader />
-                <div style={{ marginTop: "10px" }}>
-                  <Divider />
-                </div>
+                <CustomDivider />
                 <ElapsedDataChecker />
-                <div style={{ marginTop: "10px" }}>
-                  <Divider />
-                </div>
+                <CustomDivider />
                 <ToleranceWindow />
               </Grid>
               <Grid item xs={5}>
@@ -92,13 +87,11 @@ export default function TransitionsModal() {
                   selectedOption={splitSchedule}
                   onSelectOption={handleSplitScheduleChange}
                 />
-                <div style={{ marginTop: "10px" }}>
-                  <Divider />
-                </div>
+                              <CustomDivider />
+
                 <LocationChecking />
-                <div style={{ marginTop: "10px" }}>
-                  <Divider />
-                </div>
+                <CustomDivider />
+
                 <ClientTypeSelector
                   selectedType={clientType}
                   onSelectType={handleClientTypeChange}
@@ -110,16 +103,23 @@ export default function TransitionsModal() {
                   <TestingCenter centerNumber={4} />
                 </div>
               </Grid>
-              <Grid item xs={12} align="center"> {/* Center align grid item */}
-                <Typography variant="h6">
+              <Grid item xs={12} align="center">
+                {" "}
+                {/* Center align grid item */}
+                <Typography variant="h6" fontWeight="bold" className="main-text-color">
                   Data in the import file is correct. Please press Continue to
                   import.
                 </Typography>
                 <div style={{ marginTop: "10px" }}>
-                  <Button variant="contained" color="primary">
+                  <Button variant="contained" className="contained-button" sx={{backgroundColor:"#293C68"}}>
                     Continue Import
                   </Button>
-                  <Button variant="outlined" color="primary" onClick={handleClose} style={{ marginLeft: "10px" }}>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    onClick={handleClose}
+                    className="outlined-button"
+                  >
                     Cancel
                   </Button>
                 </div>

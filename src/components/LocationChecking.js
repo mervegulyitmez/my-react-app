@@ -4,8 +4,10 @@ import { Typography } from "@mui/material";
 function LocationChecking() {
   return (
     <div>
-      <Typography variant="h6">Location Checking:</Typography>
-      <Typography variant="h6">All Available!</Typography>
+      <Typography gutterBottom fontWeight="bold" className="main-text-color">
+        Location Checking:
+      </Typography>
+      <p className="elapsed-date">All Available!</p>
     </div>
   );
 }
