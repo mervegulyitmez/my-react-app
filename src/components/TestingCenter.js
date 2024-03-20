@@ -31,7 +31,7 @@ function TestingCenter({ centerNumber }) {
             onChange={handleClientChange}
             displayEmpty
             className="select-element"
-            sx={{ borderRadius: "20px" , color:"#293d68"}}
+            sx={{ borderRadius: "16px" , color:"#293d68"}}
             >
             <MenuItem value="" disabled>
               Select Client

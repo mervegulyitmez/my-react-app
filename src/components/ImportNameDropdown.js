@@ -8,7 +8,7 @@ import "../../src/style.scss";
 
 function ImportNameDropdown({ value, onChange }) {
   return (
-    <Box sx={{ minWidth: 120, marginBottom:'20px'}}>
+    <Box sx={{ minWidth: 120, marginBottom:'16px'}}>
       <FormControl fullWidth>
         <Select
           value={value}
