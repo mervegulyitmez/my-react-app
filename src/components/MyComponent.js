@@ -21,7 +21,7 @@ import CustomDivider from "./CustomDivider";
 import "../../src/style.scss";
 
 export default function TransitionsModal() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const [importName, setImportName] = useState(""); // Define importName state
   const [splitSchedule, setSplitSchedule] = useState("");
   const [clientType, setClientType] = useState("");
